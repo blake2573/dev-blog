@@ -48,14 +48,8 @@ jobs:
 
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v4
-
-            - name: Deploy 🚀
-              uses: JamesIves/github-pages-deploy-action@v4
               with:
-                  branch: gh-pages
-                  folder: dist
-                  clean: true
-                  single-commit: true
+                path: dist/
 
     # Deployment job
     deploy:
