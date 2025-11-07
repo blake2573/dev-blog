@@ -1,0 +1,20 @@
+{
+  "name": "dev-blog",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "cssx",
+    "build": "cssx build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "connect-livereload": "^0.6.1",
+    "cssx-framework-cli": "^0.1.13",
+    "express": "^4.21.2",
+    "livereload": "^0.9.3"
+  },
+  "type": "module",
+  "packageManager": "pnpm@9.10.0+sha512.73a29afa36a0d092ece5271de5177ecbf8318d454ecd701343131b8ebc0c1a91c487da46ab77c8e596d6acf1461e3594ced4becedf8921b074fbd8653ed7051c"
+}

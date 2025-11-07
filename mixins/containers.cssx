@@ -1,0 +1,11 @@
+@mixin appContainer() {
+    border-radius: 8px;
+    box-shadow: -3px 3px 12px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 4rem auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 1rem;
+}

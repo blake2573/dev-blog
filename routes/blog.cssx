@@ -1,0 +1,57 @@
+@import '../mixins/buttons.cssx';
+@import '../mixins/containers.cssx';
+
+div.page {
+    container: page / inline-size;
+    display: flex;
+    height: 100dvh;
+    overflow: hidden;
+
+    div.root {
+        @include appContainer;
+
+        div.content {
+            line-height: 1;
+            margin: 0;
+            width: clamp(600px, 60dvw, 95dvw);
+            --id: "content";
+
+            > blockquote {
+                margin-inline-start: 0;
+                padding-inline-start: 1em;
+                position: relative;
+
+                &::before {
+                    background-color: black;
+                    content: '|';
+                    inset: 0 auto 0 0;
+                    position: absolute;
+                }
+            }
+        }
+
+        img.contentLoader {
+            display: none;
+            --src: "logo.svg";
+            --title: "Logo";
+            --onerror:
+                "let params = new URLSearchParams(window.location.search);"
+                "let file = '/home.md';"
+                "let title = params.get('title');"
+                "if (title !== null) {"
+                    "file = '/' + title + '.md';"
+                "}"
+                "fetch(file)"
+                ".then(response => { "
+                    "if (!response.ok) {"
+                        "window.location.href = window.location.origin + window.location.pathname;"
+                    "};"
+
+                    "return response.text();"
+                "})"
+                ".then(x => { "
+                    "document.getElementById('content').innerHTML = marked.parse(x.replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/,''));"
+                "})";
+        }
+    }
+}
