@@ -1,6 +1,13 @@
 name: Deploy to Github Pages
 
 on:
+    workflow_dispatch:
+        inputs:
+          deploy:
+            description: 'Should I deploy?'
+            required: false
+            type: boolean
+            default: true
     push:
         branches: [main]
     pull_request:
