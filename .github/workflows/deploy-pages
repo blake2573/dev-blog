@@ -1,0 +1,52 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        permissions:
+            # Give the default GITHUB_TOKEN write permission to commit and push the
+            # added or changed files to the repository.
+            contents: write
+
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - uses: pnpm/action-setup@v4
+              name: Install pnpm
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: 24.0.1
+                cache: 'pnpm'
+
+            - name: Install Dependencies
+              run: pnpm install
+
+            - name: Build
+              run: pnpm run build
+
+            - name: Deploy 🚀
+              uses: JamesIves/github-pages-deploy-action@v4
+              with:
+                  branch: gh-pages
+                  folder: dist
+                  clean: true
+                  single-commit: true
