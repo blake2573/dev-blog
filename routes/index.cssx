@@ -11,6 +11,7 @@ div.page {
     --color-secondary-dark: #e3e3e3;
     --background-accent-light: #424242;
     --background-accent-dark: #e3e3e3;
+    --id: "Check out https://www.npmjs.com/package/cssx-framework for more info on how this was built";
 
     @include pageContainer;
     grid-template-areas: "nav content";
