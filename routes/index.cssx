@@ -29,7 +29,6 @@ div.page {
         box-shadow: -3px 3px 12px 5px rgba(0, 0, 0, 0.1);
         color: light-dark(var(--color-secondary-light), var(--color-secondary-dark));
         grid-area: nav;
-        padding: 1rem;
         position: relative;
 
         button.mobile-menu {
@@ -38,11 +37,19 @@ div.page {
             --text: "Recent posts";
 
             @media (max-width: 900px) {
+                background-color: inherit;
+                border: none;
                 display: block;
+                padding: 1rem;
+
+                &:hover {
+                    background-color: light-dark(var(--background-color-light), var(--background-color-dark));
+                }
             }
         }
 
         h3 {
+            padding: 0 0.75rem;
             --text: "Recent posts";
 
             @media (max-width: 900px) {
@@ -61,10 +68,16 @@ div.page {
                     border: none;
                     cursor: pointer;
                     font-size: 1rem;
+                    padding: 0.5rem 0.75rem;
                     text-decoration: underline;
                     text-align: start;
+                    width: 100%;
                     --onclick: window.location.href = window.location.href.replace(window.location.search, '') + '?title=ai-as-a-first-language';
                     --text: "AI as a first language";
+
+                    &:hover {
+                        background-color: light-dark(var(--background-color-light), var(--background-color-dark));
+                    }
                 }
             }
 
