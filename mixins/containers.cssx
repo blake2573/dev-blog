@@ -71,6 +71,7 @@
     > pre {
         background-color: light-dark(var(--background-secondary-light), var(--background-secondary-dark));
         border-radius: 4px;
+        overflow: auto;
         padding: 0.5rem;
     }
 
