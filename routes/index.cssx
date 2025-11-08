@@ -1,4 +1,3 @@
-@import '../mixins/buttons.cssx';
 @import '../mixins/containers.cssx';
 
 div.page {
