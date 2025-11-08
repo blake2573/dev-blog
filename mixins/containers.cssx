@@ -66,4 +66,10 @@
         border-radius: 4px;
         padding: 0.5rem;
     }
+
+    > p > code {
+        background-color: light-dark(var(--background-secondary-light), var(--background-secondary-dark));
+        border-radius: 4px;
+        padding: 0 0.3rem;
+    }
 }
