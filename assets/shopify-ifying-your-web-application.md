@@ -9,3 +9,5 @@ I’ve split this journey up into 3 key parts: Some first setup steps like authe
 
 > P.S.: This is an AI-free zone; all slop uncovered within is organic human-generated slop
 > 
+
+Keep reading in [Part I - Liquid templates and authentication](?title=pt-i-liquid-templates-and-auth)...

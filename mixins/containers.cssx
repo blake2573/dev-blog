@@ -1,11 +1,69 @@
 @mixin appContainer() {
     border-radius: 8px;
-    box-shadow: -3px 3px 12px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin: 4rem auto;
+    margin: 0 0 0 2rem;
     overflow-x: hidden;
     overflow-y: auto;
     padding: 1rem;
+}
+
+@mixin pageContainer() {
+    background-color: light-dark(var(--background-color-light), var(--background-color-dark));
+    color: light-dark(var(--color-light), var(--color-dark));
+    color-scheme: light dark;
+    container: page / inline-size;
+    display: grid;
+    font-family: Inter, sans-serif;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+@mixin listContainer() {
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+
+    @media (max-width: 900px) {
+        display: none;
+
+        &[data-visible="true"] {
+            border-radius: 8px;
+            box-shadow: -3px 3px 12px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 1rem;
+            left: 1rem;
+            margin: 0;
+            padding: 1rem;
+            position: absolute;
+            top: calc(100% + 1rem);
+        }
+    }
+}
+
+@mixin markdownContainer() {
+    width: clamp(600px, 60dvw, 95dvw);
+
+    > blockquote {
+        margin-inline-start: 0;
+        padding-inline-start: 1em;
+        position: relative;
+
+        &::before {
+            background-color: light-dark(var(--background-accent-light), var(--background-accent-dark));
+            content: '';
+            inset: 0 auto 0 0;
+            position: absolute;
+            width: 3px;
+        }
+    }
+
+    > pre {
+        background-color: light-dark(var(--background-secondary-light), var(--background-secondary-dark));
+        border-radius: 4px;
+        padding: 0.5rem;
+    }
 }
