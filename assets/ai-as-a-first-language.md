@@ -1,5 +1,4 @@
-
-## AI as a first language
+# AI as a first language
 ### 2023-07-03
 
 Language is an essential part of human communication, and how it has developed has been a fascinating topic for linguists and psychologists for many years. It enables us to express complex thoughts and emotions, share knowledge and ideas, build social connections, and, crucially, has provided a medium on which to build the complex societies of cooperation and innovation that exist today. 

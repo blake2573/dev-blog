@@ -1,4 +1,4 @@
-## Colonialism II: The Rise of AI
+# Colonialism II: The Rise of AI
 ### 2023-04-03
 
 As someone who has been writing software since I was 10 years old, there is no question that I am fascinated by the rise of AI. We’ve all seen the sci-fi movies from the 80’s where robots are taking over the world, or fighting crime, or the myriad of other portrayals from pop culture over the years. The idea that it’s here today is something I never thought I would see until I was much older. But as someone with an interest in language, the additional fascination with how these large language models (LLMs) process, understand, and generate cohesive text is something else entirely. The fact that an ability previously seen as exclusively human could be replicated to a certifiable degree with technology is an astounding feat of engineering.

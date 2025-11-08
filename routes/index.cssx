@@ -72,8 +72,8 @@ div.page {
                     text-decoration: underline;
                     text-align: start;
                     width: 100%;
-                    --onclick: window.location.href = window.location.href.replace(window.location.search, '') + '?title=ai-as-a-first-language';
-                    --text: "AI as a first language";
+                    --onclick: window.location.href = window.location.href.replace(window.location.search, '') + '?title=colonialism-ii-the-rise-of-ai';
+                    --text: "Colonialism II: The Rise of AI";
 
                     &:hover {
                         background-color: light-dark(var(--background-color-light), var(--background-color-dark));
@@ -85,8 +85,8 @@ div.page {
                 --key: 2;
 
                 button {
-                    --onclick: window.location.href = window.location.href.replace(window.location.search, '') + '?title=colonialism-ii-the-rise-of-ai';
-                    --text: "Colonialism II: The Rise of AI";
+                    --onclick: window.location.href = window.location.href.replace(window.location.search, '') + '?title=ai-as-a-first-language';
+                    --text: "AI as a first language";
                 }
             }
 
