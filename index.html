@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+        <title>CSSX</title>
+        <style id="stylesheet">div.page {
+    --background-color-light: #e3e3e3;
+    --background-color-dark: #303030;
+    --background-secondary-light: #f4f4f4;
+    --background-secondary-dark: #424242;
+    --color-light: #242424;
+    --color-dark: #e3e3e3;
+    --color-secondary-light: #242424;
+    --color-secondary-dark: #e3e3e3;
+    --background-accent-light: #424242;
+    --background-accent-dark: #e3e3e3;
+    
+    background-color: light-dark(var(--background-color-light), var(--background-color-dark));
+    color: light-dark(var(--color-light), var(--color-dark));
+    color-scheme: light dark;
+    container: page / inline-size;
+    display: grid;
+    font-family: Inter, sans-serif;
+    height: 100dvh;
+    overflow: hidden;
+    grid-template-areas: "nav content";
+    grid-template-columns: 22.5dvw auto;
+    
+    @media (max-width: 900px) {
+        grid-template-areas:
+        "nav"
+        "content";
+        grid-template-columns: auto;
+        grid-template-rows: min-content auto;
+    }
+    
+    div.nav {
+        background-color: light-dark(var(--background-secondary-light), var(--background-secondary-dark));
+        box-shadow: -3px 3px 12px 5px rgba(0, 0, 0, 0.1);
+        color: light-dark(var(--color-secondary-light), var(--color-secondary-dark));
+        grid-area: nav;
+        padding: 1rem;
+        position: relative;
+        
+        button.mobile-menu {
+            display: none;
+            
+            @media (max-width: 900px) {
+                display: block;
+            }
+        }
+        
+        h3 {
+            
+            @media (max-width: 900px) {
+                display: none;
+            }
+        }
+        
+        ul.posts {
+            background-color: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            list-style: none;
+            padding: 0;
+            @media (max-width: 900px) {
+                display: none;
+                &[data-visible="true"] {
+                    border-radius: 8px;
+                    box-shadow: -3px 3px 12px 5px rgba(0, 0, 0, 0.1);
+                    display: flex;
+                    gap: 1rem;
+                    left: 1rem;
+                    margin: 0;
+                    padding: 1rem;
+                    position: absolute;
+                    top: calc(100% + 1rem);
+                }
+            }
+            
+            li {
+                --key: 1;
+                
+                button {
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    font-size: 1rem;
+                    text-decoration: underline;
+                    text-align: start;
+                }
+            }
+            
+            li {
+                --key: 2;
+                
+                button {
+                }
+            }
+            
+            li {
+                --key: 3;
+                
+                button {
+                }
+            }
+        }
+    }
+    
+    div.contentWrapper {
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 0 2rem;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 1rem;
+        grid-area: content;
+        
+        div.content {
+            width: clamp(600px, 60dvw, 95dvw);
+            > blockquote {
+                margin-inline-start: 0;
+                padding-inline-start: 1em;
+                position: relative;
+                &::before {
+                    background-color: light-dark(var(--background-accent-light), var(--background-accent-dark));
+                    content: '';
+                    inset: 0 auto 0 0;
+                    position: absolute;
+                    width: 3px;
+                }
+            }
+            > pre {
+                background-color: light-dark(var(--background-secondary-light), var(--background-secondary-dark));
+                border-radius: 4px;
+                padding: 0.5rem;
+            }
+            
+            > p {
+                font-size: 1rem;
+            }
+        }
+        
+        img.contentLoader {
+            display: none;
+        }
+    }
+}</style>
+    </head>
+    <body id="body" style="margin: 0;">
+        <main>
+            <div id="app"><div class="page">
+    <div class="nav">
+        <button class="mobile-menu" onclick="document.querySelector('.posts').setAttribute('data-visible', document.querySelector('.posts').getAttribute('data-visible') != 'true');">
+            Recent posts
+        </button>
+        <h3 >
+            Recent posts
+        </h3>
+        <ul class="posts">
+            <li >
+                <button onclick="window.location.href = window.location.href.replace(window.location.search, '') + '?title=ai-as-a-first-language';">
+                    AI as a first language
+                </button>
+            </li>
+            <li >
+                <button onclick="window.location.href = window.location.href.replace(window.location.search, '') + '?title=colonialism-ii-the-rise-of-ai';">
+                    Colonialism II: The Rise of AI
+                </button>
+            </li>
+            <li >
+                <button onclick="window.location.href = window.location.href.replace(window.location.search, '') + '?title=shopify-ifying-your-web-application';">
+                    Shopify-ifying your web application
+                </button>
+            </li>
+        </ul>
+    </div>
+    <div class="contentWrapper">
+        <div class="content" id="content">
+        </div>
+        <img class="contentLoader" src="logo.svg" title="Logo" onerror="let params = new URLSearchParams(window.location.search); let file = '/home.md'; let title = params.get('title'); if (title !== null) { file = '/' + title + '.md'; } let rootPath = window.location.href.replace(window.location.search, ''); if (rootPath.includes('localhost')) { rootPath = ''; } fetch(rootPath + file) .then(response => {  if (!response.ok) { window.location.href = window.location.origin + window.location.pathname; }; return response.text(); }) .then(x => {  document.getElementById('content').innerHTML = marked.parse(x.replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/,'')); })">
+        </img>
+    </div>
+</div></div>
+        </main>
+    </body>
+</html>
