@@ -26,7 +26,7 @@ In order to get this working, you should create a custom app render function, es
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     if (window.MyShopifyApp && typeof window.MyShopifyApp.init === 'function') {
-			// MyShopifyApp will be replaced with whatever your build output config names the default export
+	  // MyShopifyApp will be replaced with whatever your build output config names the default export
       window.MyShopifyApp.init({
         container: '#your-app-container', // Must match the id of the above div
         shop: '{{ shop_domain }}',
@@ -93,7 +93,7 @@ The below code snippets are customised for this blog, but represent essentially 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     if (window.MyShopifyApp && typeof window.MyShopifyApp.init === 'function') {
-			// MyShopifyApp will be replaced with whatever your build output config names the default export
+	  // MyShopifyApp will be replaced with whatever your build output config names the default export
       window.MyShopifyApp.init({
         container: '#your-app-container', // Must match the id of the above div
         shop: '{{ shop_domain }}',
