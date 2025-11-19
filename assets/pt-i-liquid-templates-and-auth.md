@@ -71,6 +71,11 @@ What this means for authentication is fairly simple - instead of requiring a cus
 
 …and that’s a wrap for this part. There’s probably plenty of things that I have forgotten to cover here, but I’ll look to capture anything else important in Part Two, where I’ll go over more detail on interacting with Shopify from your app.
 
+
+The journey continues in [Part III - Containers all the way down](?title=part-iii-containers-all-the-way-down), or keep reading on for the code snippets that have been mentioned above.
+
+And for those that notice it goes from part I to part III, I see you. Part II is on its way!
+
 ### Code snippets
 
 The below code snippets are customised for this blog, but represent essentially the same logic flow as is required, and should be able to be incorporated to your site easily enough.
