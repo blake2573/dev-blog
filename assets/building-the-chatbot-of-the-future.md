@@ -189,7 +189,7 @@ themes = extra_data.get("availableThemes", [])
 
 theme_entries = [
     (str(item["id"]), item.get("name", str(item["id"])))
-    for item in backboard_colours
+    for item in themes
     if isinstance(item, dict) and item.get("id") is not None
 ]
 theme_ids = [item_id for item_id, _ in theme_entries]
