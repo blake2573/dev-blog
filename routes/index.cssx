@@ -101,6 +101,15 @@ div.page {
                     --text: "Shopify-ifying your web application";
                 }
             }
+
+            li {
+                --key: 4;
+
+                button {
+                    --onclick: window.location.href = window.location.href.replace(window.location.search, '') + '?title=building-the-chatbot-of-the-future';
+                    --text: "Building the Chatbot of the Future";
+                }
+            }
         }
     }
 
